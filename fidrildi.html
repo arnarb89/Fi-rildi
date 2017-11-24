@@ -1,0 +1,54 @@
+
+<!-- saved from url=(0058)https://notendur.hi.is/~hh/kennsla/tgr/Angel/solkerfi.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<script id="vertex-shader" type="x-shader/x-vertex">
+
+attribute  vec4 vPosition;
+attribute  vec4 vColor;
+varying vec4 fColor;
+
+uniform mat4 rotation;
+
+void main()
+{
+    fColor = vColor;
+    gl_Position = rotation * vPosition;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+varying vec4 fColor;
+
+void
+main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+
+</head><body style="background-color:gray;">
+<canvas id="gl-canvas" width="512"  height="512" >
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+
+<br>
+Radius1 (Alignment, Cohesion): <input type="number" id="longrangeinput"></input><br>
+Radius2 (Separation): <input type="number" id="shortrangeinput"></input><br>
+
+Alignment Weight: <input type="number" id="alignmentinput"></input><br>
+Cohesion Weight: <input type="number" id="cohesioninput"></input><br>
+Separation Weight: <input type="number" id="separationinput"></input><br>
+
+
+</body>
+
+<script type="text/javascript" src="./fidrildi_files/webgl-utils.js"></script><style type="text/css"></style>
+<script type="text/javascript" src="./fidrildi_files/initShaders.js"></script>
+<script type="text/javascript" src="./fidrildi_files/MV.js"></script>
+<script type="text/javascript" src="./fidrildi_files/fidrildi.js"></script>
+
+</html>
